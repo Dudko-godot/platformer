@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://wmmc8bhd7x85"]
+
+[ext_resource type="Script" path="res://меню.gd" id="1_q6o5b"]
+[ext_resource type="Texture2D" uid="uid://05a25ao2gy37" path="res://pButton.png" id="2_jik1t"]
+[ext_resource type="Texture2D" uid="uid://r2udybem4ybw" path="res://QButton.png" id="3_acf7w"]
+[ext_resource type="Texture2D" uid="uid://dgwkwr5lr06js" path="res://phButton.png" id="3_q2n4i"]
+[ext_resource type="Texture2D" uid="uid://b7w4ilcdwwc2d" path="res://QhButton.png" id="5_5gnfn"]
+[ext_resource type="PackedScene" uid="uid://dyu6y6aimovyi" path="res://bg.tscn" id="6_u83jg"]
+
+[node name="Меню" type="Node2D"]
+script = ExtResource("1_q6o5b")
+
+[node name="Play" type="TextureButton" parent="."]
+texture_filter = 3
+offset_left = 305.0
+offset_top = 179.0
+offset_right = 805.0
+offset_bottom = 388.0
+texture_normal = ExtResource("2_jik1t")
+texture_hover = ExtResource("3_q2n4i")
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_left = 305.0
+offset_top = 408.0
+offset_right = 805.0
+offset_bottom = 617.0
+texture_normal = ExtResource("3_acf7w")
+texture_hover = ExtResource("5_5gnfn")
+
+[node name="BG" parent="." instance=ExtResource("6_u83jg")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
